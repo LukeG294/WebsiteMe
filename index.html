@@ -1,1 +1,17 @@
-<a href="https://us05web.zoom.us/j/86387587075?pwd=U1hpT0R2bldNdEVQNjFWeWF5c0NTUT09#success">link text</a>
+<script>
+function download(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
+// Start file download.
+download("hello.txt","This is the content of my file :)");
+</script>
