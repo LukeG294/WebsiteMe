@@ -13,5 +13,11 @@ function download(filename, text) {
 }
 
 // Start file download.
-download("hello.txt","This is the content of my file :)");
+document.getElementById("dwn-btn").addEventListener("click", function(){
+// Start the download of yournewfile.txt file with the content from the text area
+    var text = document.getElementById("text-val").value;
+    var filename = "yournewfile.txt";
+    
+    download(filename, text);
+}, false);
 </script>
