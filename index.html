@@ -1,11 +1,22 @@
+<!-- The text field -->
+<input type="text" value="Hello World" id="myInput">
 
+<!-- The button used to copy the text -->
+<button onclick="myFunction()">Copy text</button>
 
-<div style="display:inline-block; vertical-align:top;">
-  <button class="js-copy-bob-btn">Set clipboard to BOB</button><br /><br />
-  <button class="js-copy-jane-btn">Set clipboard to JANE</button>
-</div>
-<div style="display:inline-block;">
-  <textarea class="js-test-textarea" cols="35" rows="4">Try pasting into here to see what you have on your clipboard:
+<script>
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
 
-  </textarea>
-</div>
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
+</script>
